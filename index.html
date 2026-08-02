@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christian Rosales — Web Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<header>
+  <nav class="wrap">
+    <div class="logo"><span class="dot"></span> christian-rosales.dev</div>
+    <div class="navlinks">
+      <a href="#about" data-nav><span class="num">01</span>About</a>
+      <a href="#experience" data-nav><span class="num">02</span>Experience</a>
+      <a href="#projects" data-nav><span class="num">03</span>Projects</a>
+      <a href="#skills" data-nav><span class="num">04</span>Skills</a>
+      <a href="#contact" data-nav><span class="num">05</span>Contact</a>
+    </div>
+    <a class="nav-cta" href="#contact">Get in touch</a>
+    <button class="navtoggle" id="navtoggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">01 · About</a>
+    <a href="#experience">02 · Experience</a>
+    <a href="#projects">03 · Projects</a>
+    <a href="#skills">04 · Skills</a>
+    <a href="#contact">05 · Contact</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" style="border-top:none;">
+    <div class="wrap">
+      <div class="terminal"><span class="prompt">$</span>&nbsp;<span id="typewriter"></span><span class="cursor"></span></div>
+      <h1>Building software that's <span class="accent">fast, clear,</span> and built to last.</h1>
+      <p class="lede">I'm Christian Rosales, a recent IT graduate and web &amp; mobile developer based in Caloocan City, Philippines. I turn ambiguous problems into shipped, working products.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">View projects</a>
+        <a class="btn btn-ghost" href="#contact">Contact me</a>
+      </div>
+      <div class="stack-row">
+        <div><span class="num-val" data-count="2">0</span> shipped projects</div>
+        <div><span>Web &amp; Mobile</span> developer</div>
+        <div><span>Open to</span> entry-level roles</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="eyebrow reveal">01 / About</div>
+      <h2 class="section-title reveal">A little about how I work.</h2>
+      <div class="about-grid">
+        <div class="reveal">
+          <p>I'm a recent <strong>BS Information Technology</strong> graduate with hands-on experience building web and mobile products through internships and academic projects. I'm comfortable working independently or in a team, and I pick up new tools quickly.</p>
+          <p>Most recently I worked as a <strong>Junior Web Developer Intern</strong> at Alpha Centauri Garments Corporation, contributing to both a mobile app and a web owner portal for a property management platform.</p>
+          <p>I'm looking for an <strong>entry-level role</strong> where I can keep growing as an engineer inside a forward-thinking team.</p>
+        </div>
+        <div class="facts reveal">
+          <div><span>Location</span><span>Caloocan City, PH</span></div>
+          <div><span>Focus</span><span>Web &amp; Mobile Dev</span></div>
+          <div><span>Education</span><span>BS in IT, 2026</span></div>
+          <div><span>Available</span><span style="color:var(--ok)">Open to work</span></div>
+          <div><span>Email</span><span><a href="mailto:christianrosales489@gmail.com" style="color:var(--accent)">christianrosales489@gmail.com</a></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="eyebrow reveal">02 / Experience</div>
+      <h2 class="section-title reveal">Where I've worked.</h2>
+      <div class="timeline reveal">
+        <div class="tl-item">
+          <div class="tl-date">Feb 2026 — May 2026<br>Mother Ignacia, Quezon City</div>
+          <div>
+            <h3>Alpha Centauri Garments Corporation</h3>
+            <span class="tl-role">Junior Web Developer Intern</span>
+            <ul>
+              <li>Developed and implemented features for a property management platform, consisting of a mobile app and a web owner portal serving property owners and staff.</li>
+              <li>Built and improved mobile app features including Reservations, Booking Management, Block Dates, Haven Management, Guest Assistance, Messages, Revenue Management, and Payment Methods.</li>
+              <li>Contributed to front-end web portal development, working on Staff Management, User Management, and Analytics &amp; Reports modules.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2026<br>Quezon City</div>
+          <div>
+            <h3>College of St. Catherine Quezon City</h3>
+            <span class="tl-role">Bachelor of Science in Information Technology</span>
+            <ul>
+              <li>Graduated with hands-on experience in web development through academic projects and internships.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="eyebrow reveal">03 / Selected work</div>
+      <h2 class="section-title reveal">A few things I've built.</h2>
+      <div class="projects reveal">
+        <div class="project">
+          <div class="pnum">01</div>
+          <div>
+            <h3>Employee Attendance Monitoring App with Data Analytics</h3>
+            <ul class="plist">
+              <li>Developed a mobile and web-based employee attendance and work progress monitoring system for DACS.</li>
+              <li>Implemented GPS geofencing and biometric (fingerprint) authentication for attendance verification.</li>
+              <li>Built RESTful APIs using Node.js, Express.js, and PostgreSQL to manage system data.</li>
+              <li>Developed the employee mobile app in Flutter and the admin web portal for monitoring and reporting.</li>
+              <li>Designed a data analytics dashboard to track attendance trends, employee performance, and task completion.</li>
+            </ul>
+            <div class="tags"><span>Flutter</span><span>Node.js</span><span>Express.js</span><span>PostgreSQL</span></div>
+          </div>
+        </div>
+        <div class="project">
+          <div class="pnum">02</div>
+          <div>
+            <h3>Property Management Platform</h3>
+            <ul class="plist">
+              <li>Built mobile app features for property owners and staff: reservations, booking management, and block dates.</li>
+              <li>Added guest assistance, in-app messaging, revenue management, and payment method handling.</li>
+              <li>Contributed to the web owner portal, working on staff management, user management, and analytics &amp; reports.</li>
+            </ul>
+            <div class="tags"><span>JavaScript</span><span>TypeScript</span><span>Node.js</span><span>Neon</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="eyebrow reveal">04 / Toolkit</div>
+      <h2 class="section-title reveal">What I work with.</h2>
+      <div class="skills-grid reveal">
+        <div class="skill-card">
+          <h4>Languages</h4>
+          <ul><li>JavaScript</li><li>TypeScript</li><li>Dart</li><li>HTML</li></ul>
+        </div>
+        <div class="skill-card">
+          <h4>Frameworks &amp; Data</h4>
+          <ul><li>Node.js / Express.js</li><li>Flutter</li><li>PostgreSQL</li></ul>
+        </div>
+        <div class="skill-card">
+          <h4>Tools</h4>
+          <ul><li>Git</li><li>Postman</li><li>REST API design</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="eyebrow reveal">05 / Contact</div>
+      <h2 class="section-title reveal">Let's work together.</h2>
+      <p class="reveal" style="color:var(--text-dim); max-width:480px; margin:0 auto;">I'm currently open to entry-level roles. The fastest way to reach me is email or phone.</p>
+      <div class="contact-links reveal">
+        <button class="btn btn-primary" id="copyEmail" type="button">christianrosales489@gmail.com</button>
+        <a class="btn btn-ghost" href="tel:09995158428">0999 515 8428</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>© 2026 Christian Rosales</span>
+  <span>Caloocan City, Philippines</span>
+</footer>
+
+<div class="copy-toast" id="copyToast">Email copied to clipboard</div>
+
+<script type="module" src="/src/main.js"></script>
+
+</body>
+</html>
