@@ -13,13 +13,14 @@
 
 <div id="cursor-dot"></div>
 <div id="cursor-ring"></div>
+<div id="scroll-progress"></div>
 
 <header>
   <nav class="wrap">
     <div class="logo"><span class="dot"></span> christian-rosales.dev</div>
     <div class="navlinks">
       <a href="#about" data-nav><span class="num">01</span>About</a>
-      <a href="#experience" data-nav><span class="num">02</span>Experience</a>
+      <a href="#experience" data-nav><span class="num">02</span>Experience & Education</a>
       <a href="#projects" data-nav><span class="num">03</span>Projects</a>
       <a href="#skills" data-nav><span class="num">04</span>Skills</a>
       <a href="#contact" data-nav><span class="num">05</span>Contact</a>
@@ -42,8 +43,13 @@
   <!-- HERO -->
   <section class="hero" style="border-top:none;">
     <div class="wrap">
-      <div class="terminal"><span class="prompt">$</span>&nbsp;<span id="typewriter"></span><span class="cursor"></span></div>
-      <h1>Building software that's <span class="accent">fast, clear,</span> and built to last.</h1>
+      <div class="terminal" id="terminal" tabindex="0" title="Click to try a command — type help to start" aria-label="Interactive terminal, press Enter to activate then type a command">
+        <div class="terminal-output" id="terminalOutput"></div>
+        <div class="terminal-line">
+          <span class="prompt">$</span>&nbsp;<span id="typewriter"></span><span class="cursor" id="termCursor"></span><input type="text" id="terminalInput" class="terminal-input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal command input"><span id="terminalMirror" class="terminal-mirror" aria-hidden="true"></span>
+        </div>
+      </div>
+      <h1>Building web and mobile <span class="accent">experiences that matter.</span></h1>
       <p class="lede">I'm Christian Rosales, a recent IT graduate and web &amp; mobile developer. I turn ambiguous problems into shipped, working products.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#projects">View projects</a>
@@ -73,7 +79,6 @@
           <div><span>Focus</span><span>Web &amp; Mobile Dev</span></div>
           <div><span>Education</span><span>BS in IT, 2026</span></div>
           <div><span>Available</span><span style="color:var(--ok)">Open to work</span></div>
-          <div><span>Resume</span><span><a href="/christian_rosales_resume.pdf" download style="color:var(--accent)">Download PDF &#8595;</a></span></div>
           <div><span>Email</span><span><a href="mailto:christianrosales489@gmail.com" style="color:var(--accent)">christianrosales489@gmail.com</a></span></div>
         </div>
       </div>
@@ -83,7 +88,7 @@
   <!-- EXPERIENCE -->
   <section id="experience">
     <div class="wrap">
-      <div class="eyebrow reveal">02 / Experience</div>
+      <div class="eyebrow reveal">02 / Experience & Education</div>
       <h2 class="section-title reveal">Where I've worked.</h2>
       <div class="timeline reveal">
         <div class="tl-item">
@@ -99,7 +104,7 @@
           </div>
         </div>
         <div class="tl-item">
-          <div class="tl-date">2026<br>Quezon City</div>
+          <div class="tl-date">July 2026<br>Sangandaan, Quezon City</div>
           <div>
             <h3>College of St. Catherine Quezon City</h3>
             <span class="tl-role">Bachelor of Science in Information Technology</span>
@@ -119,30 +124,104 @@
       <h2 class="section-title reveal">A few things I've built.</h2>
       <div class="projects reveal">
         <div class="project">
-          <div class="pnum">01</div>
-          <div>
-            <h3>Employee Attendance Monitoring App with Data Analytics</h3>
-            <ul class="plist">
-              <li>Developed a mobile and web-based employee attendance and work progress monitoring system for DACS.</li>
-              <li>Implemented GPS geofencing and biometric (fingerprint) authentication for attendance verification.</li>
-              <li>Built RESTful APIs using Node.js, Express.js, and PostgreSQL to manage system data.</li>
-              <li>Developed the employee mobile app in Flutter and the admin web portal for monitoring and reporting.</li>
-              <li>Designed a data analytics dashboard to track attendance trends, employee performance, and task completion.</li>
-            </ul>
-            <div class="tags"><span>Flutter</span><span>Node.js</span><span>Express.js</span><span>PostgreSQL</span></div>
+          <div class="flip-card" data-flip-card tabindex="0" role="button" aria-pressed="false" aria-label="Employee Attendance Monitoring App — flip for links and screenshots">
+            <div class="flip-inner">
+              <div class="flip-face flip-front">
+                <div class="pnum">01</div>
+                <div>
+                  <h3>Employee Attendance Monitoring App with Data Analytics</h3>
+                  <ul class="plist">
+                    <li>Developed a mobile and web-based employee attendance and work progress monitoring system for DACS.</li>
+                    <li>Implemented GPS geofencing and biometric (fingerprint) authentication for attendance verification.</li>
+                    <li>Built RESTful APIs using Node.js, Express.js, and PostgreSQL to manage system data.</li>
+                    <li>Developed the employee mobile app in Flutter and the admin web portal for monitoring and reporting.</li>
+                    <li>Designed a data analytics dashboard to track attendance trends, employee performance, and task completion.</li>
+                  </ul>
+                  <div class="tags"><span>Flutter</span><span>Node.js</span><span>Express.js</span><span>PostgreSQL</span></div>
+                  <div class="flip-hint">Click for links &amp; screenshots <span class="arrow">→</span></div>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="pnum">01</div>
+                <div>
+                  <h3>Employee Attendance Monitoring App</h3>
+                  <p style="color:var(--text-dim); font-size:15px; margin-bottom:16px; max-width:520px;">GPS-geofenced, biometric attendance tracking for DACS — mobile app in Flutter, admin dashboard on the web, backed by a Node/Express/PostgreSQL API.</p>
+                  <div class="proof-links">
+                    <a class="btn btn-primary" href="https://dacs-backend-production.up.railway.app/" target="_blank" rel="noopener" onclick="event.stopPropagation()">Live login page ↗</a>
+                  </div>
+                  <span class="access-note">Private client project — link goes to the login screen only, dashboard access is restricted.</span>
+                  <div class="screenshot-group">
+                    <span class="screenshot-group-label">Web dashboard</span>
+                    <div class="screenshot-strip">
+                      <img src="/projects/dacs-web-login.png" alt="DACS Attendance System web login screen">
+                      <img src="/projects/dacs-web-dashboard.png" alt="DACS web dashboard overview with attendance trends">
+                      <img src="/projects/dacs-web-users.png" alt="DACS web user management directory">
+                      <img src="/projects/dacs-web-attendance.png" alt="DACS web attendance management table">
+                    </div>
+                  </div>
+                  <div class="screenshot-group">
+                    <span class="screenshot-group-label">Mobile app</span>
+                    <div class="screenshot-strip">
+                      <img src="/projects/dacs-mobile-login.png" alt="DACS mobile app login screen">
+                      <img src="/projects/dacs-mobile-home.png" alt="DACS mobile app time-in screen">
+                      <img src="/projects/dacs-mobile-tasks.png" alt="DACS mobile app tasks and weekly overview">
+                      <img src="/projects/dacs-mobile-profile.png" alt="DACS mobile app user profile">
+                    </div>
+                  </div>
+                  <div class="flip-hint"><span class="arrow">←</span> Back</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="project">
-          <div class="pnum">02</div>
-          <div>
-            <h3>Staycation Haven · Property Management Platform</h3>
-            <ul class="plist">
-              <li>Built mobile app features including reservations, booking management, block dates, guest assistance, in-app messaging, revenue management, and payment method handling.</li>
-              <li>Developed web owner portal modules including staff management, user management, and analytics &amp; reports.</li>
-              <li>Performed UI improvements and bug fixing across both the mobile app and web portal to enhance user experience and visual consistency.</li>
-              <li>Collaborated in an agile team environment through weekly standups, sprint planning, and code reviews throughout the 13-week development sprint.</li>
-            </ul>
-            <div class="tags"><span>React Native</span><span>TypeScript</span><span>Next.js</span><span>Neon</span></div>
+          <div class="flip-card" data-flip-card tabindex="0" role="button" aria-pressed="false" aria-label="Staycation Haven property platform — flip for links and screenshots">
+            <div class="flip-inner">
+              <div class="flip-face flip-front">
+                <div class="pnum">02</div>
+                <div>
+                  <h3>Staycation Haven · Property Management Platform</h3>
+                  <ul class="plist">
+                    <li>Built mobile app features including reservations, booking management, block dates, guest assistance, in-app messaging, revenue management, and payment method handling.</li>
+                    <li>Developed web owner portal modules including staff management, user management, and analytics &amp; reports.</li>
+                    <li>Performed UI improvements and bug fixing across both the mobile app and web portal to enhance user experience and visual consistency.</li>
+                    <li>Collaborated in an agile team environment through weekly standups, sprint planning, and code reviews throughout the 13-week development sprint.</li>
+                  </ul>
+                  <div class="tags"><span>React Native</span><span>TypeScript</span><span>Next.js</span><span>Neon</span></div>
+                  <div class="flip-hint">Click for links &amp; screenshots <span class="arrow">→</span></div>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div class="pnum">02</div>
+                <div>
+                  <h3>Staycation Haven</h3>
+                  <p style="color:var(--text-dim); font-size:15px; margin-bottom:16px; max-width:520px;">A property management platform with a React Native mobile app for owners/guests and a Next.js web portal for staff, reservations, and reporting.</p>
+                  <div class="proof-links">
+                    <a class="btn btn-primary" href="https://www.staycationhaven-ph.com/havens.html?id=1" target="_blank" rel="noopener" onclick="event.stopPropagation()">Live customer page ↗</a>
+                  </div>
+                  <span class="access-note">Private client project — the link above is the public guest-facing booking page. Owner/staff dashboard access ended when my OJT did, so those views below are from screenshots taken while I still had access.</span>
+                  <div class="screenshot-group">
+                    <span class="screenshot-group-label">Web owner portal</span>
+                    <div class="screenshot-strip">
+                      <img src="/projects/staycation-web-staff.png" alt="Staycation Haven staff management directory">
+                      <img src="/projects/staycation-web-payments.png" alt="Staycation Haven payment methods management">
+                      <img src="/projects/staycation-web-reviews.png" alt="Staycation Haven guest reviews and feedback">
+                      <img src="/projects/staycation-web-guestassist.png" alt="Staycation Haven guest assistance and booking approvals">
+                    </div>
+                  </div>
+                  <div class="screenshot-group">
+                    <span class="screenshot-group-label">Mobile app</span>
+                    <div class="screenshot-strip">
+                      <img src="/projects/staycation-mobile-dashboard.png" alt="Staycation Haven mobile admin dashboard">
+                      <img src="/projects/staycation-mobile-reports.png" alt="Staycation Haven mobile reports and analytics">
+                      <img src="/projects/staycation-mobile-bookings.png" alt="Staycation Haven mobile bookings list">
+                      <img src="/projects/staycation-mobile-operations.png" alt="Staycation Haven mobile operations and maintenance">
+                    </div>
+                  </div>
+                  <div class="flip-hint"><span class="arrow">←</span> Back</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -191,6 +270,30 @@
 </footer>
 
 <div class="copy-toast" id="copyToast">Email copied to clipboard</div>
+
+<div class="shortcuts-overlay" id="shortcutsOverlay" role="dialog" aria-modal="true" aria-label="Keyboard shortcuts" hidden>
+  <div class="shortcuts-panel">
+    <div class="shortcuts-head">
+      <span>Keyboard shortcuts</span>
+      <button class="shortcuts-close" id="shortcutsClose" type="button" aria-label="Close">✕</button>
+    </div>
+    <ul class="shortcuts-list">
+      <li><kbd>g</kbd><kbd>a</kbd><span>About</span></li>
+      <li><kbd>g</kbd><kbd>e</kbd><span>Experience</span></li>
+      <li><kbd>g</kbd><kbd>p</kbd><span>Projects</span></li>
+      <li><kbd>g</kbd><kbd>s</kbd><span>Skills</span></li>
+      <li><kbd>g</kbd><kbd>c</kbd><span>Contact</span></li>
+      <li><kbd>?</kbd><span>Toggle this menu</span></li>
+      <li><kbd>Esc</kbd><span>Close</span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="lightbox-overlay" id="lightboxOverlay" role="dialog" aria-modal="true" aria-label="Screenshot preview" hidden>
+  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close">✕</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
 
 <script type="module" src="/src/main.js"></script>
 
