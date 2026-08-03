@@ -302,6 +302,29 @@
     .flip-face{ grid-template-columns:1fr; text-align:left; }
   }
 
+  /* ---------- security icon + popover on card back ---------- */
+  .security-toggle{
+    position:absolute; top:36px; right:36px; z-index:5;
+    width:32px; height:32px; border-radius:50%;
+    background:var(--surface-hi); border:1px solid var(--line); color:var(--text-dim);
+    display:flex; align-items:center; justify-content:center; cursor:pointer;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .security-toggle:hover, .security-toggle[aria-expanded="true"]{ color:var(--accent); border-color:var(--accent); }
+
+  .security-popover{
+    position:absolute; top:76px; right:36px; z-index:6; width:280px;
+    background:var(--surface-hi); border:1px solid var(--line); border-radius:10px;
+    padding:18px; box-shadow:0 12px 32px rgba(0,0,0,.4);
+  }
+  .security-popover[hidden]{ display:none; }
+  .security-popover .plist li{ font-size:13px; }
+
+  @media (max-width:720px){
+    .security-toggle{ top:20px; right:20px; }
+    .security-popover{ top:60px; right:20px; width:calc(100% - 40px); }
+  }
+
   /* ---------- skills ---------- */
   .skills-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden; }
   .skill-card{ background:var(--surface); padding:28px; transition:background .15s ease; }

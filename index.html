@@ -131,11 +131,11 @@
                 <div>
                   <h3>Employee Attendance Monitoring App with Data Analytics</h3>
                   <ul class="plist">
-                    <li>Developed a mobile and web-based employee attendance and work progress monitoring system for DACS.</li>
-                    <li>Implemented GPS geofencing and biometric (fingerprint) authentication for attendance verification.</li>
-                    <li>Built RESTful APIs using Node.js, Express.js, and PostgreSQL to manage system data.</li>
-                    <li>Developed the employee mobile app in Flutter and the admin web portal for monitoring and reporting.</li>
-                    <li>Designed a data analytics dashboard to track attendance trends, employee performance, and task completion.</li>
+                    <li>A mobile and web-based attendance system that tracks employee time-in/out and daily work progress for DACS. It replaces manual logbooks with a single source of truth supervisors can check in real time.</li>
+                    <li>Uses GPS geofencing and fingerprint biometrics so workers can only check in from an approved job site. This cuts down on buddy-punching and remote check-ins from outside the work area.</li>
+                    <li>Runs on a Node.js/Express/PostgreSQL backend, with a RESTful API handling all attendance and worker data. The same API powers both the mobile app and the web portal, keeping records in sync.</li>
+                    <li>A Flutter app for workers to check in, plus a web admin portal for supervisors to manage the team. Supervisors can review attendance, adjust worker roles, and handle day-to-day management from the portal.</li>
+                    <li>Includes an analytics dashboard surfacing attendance trends, employee performance, and task completion. It gives management a quick read on who's on track and where issues are piling up.</li>
                   </ul>
                   <div class="tags"><span>Flutter</span><span>Node.js</span><span>Express.js</span><span>PostgreSQL</span></div>
                   <div class="flip-hint">Click for links &amp; screenshots <span class="arrow">→</span></div>
@@ -145,6 +145,18 @@
                 <div class="pnum">01</div>
                 <div>
                   <h3>Employee Attendance Monitoring App</h3>
+                  <button class="security-toggle" type="button" aria-expanded="false" aria-label="Show security features" onclick="event.stopPropagation()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z"/></svg>
+                  </button>
+                  <div class="security-popover" hidden>
+                    <span class="screenshot-group-label">Security</span>
+                    <ul class="plist" style="margin-bottom:0;">
+                      <li>JWT auth with no hardcoded fallback secret, and bcrypt-hashed passwords.</li>
+                      <li>Role-based access control across four roles: worker, site manager, admin, and master admin.</li>
+                      <li>Rate limiting on login and password-reset endpoints to slow brute-force attempts.</li>
+                      <li>Helmet security headers (CSP, HSTS in production) plus httpOnly/secure/sameSite cookies for admin sessions.</li>
+                    </ul>
+                  </div>
                   <p style="color:var(--text-dim); font-size:15px; margin-bottom:16px; max-width:520px;">GPS-geofenced, biometric attendance tracking for DACS — mobile app in Flutter, admin dashboard on the web, backed by a Node/Express/PostgreSQL API.</p>
                   <div class="proof-links">
                     <a class="btn btn-primary" href="https://dacs-backend-production.up.railway.app/" target="_blank" rel="noopener" onclick="event.stopPropagation()">Live login page ↗</a>
@@ -155,7 +167,7 @@
                     <div class="screenshot-strip">
                       <img src="/projects/dacs-web-login.png" alt="DACS Attendance System web login screen">
                       <img src="/projects/dacs-web-dashboard.png" alt="DACS web dashboard overview with attendance trends">
-                      <img src="/projects/dacs-web-users.png" alt="DACS web user management directory">
+                      <img src="/projects/dacs-web-analytics.png" alt="DACS web user management directory">
                       <img src="/projects/dacs-web-attendance.png" alt="DACS web attendance management table">
                     </div>
                   </div>
@@ -182,10 +194,10 @@
                 <div>
                   <h3>Staycation Haven · Property Management Platform</h3>
                   <ul class="plist">
-                    <li>Built mobile app features including reservations, booking management, block dates, guest assistance, in-app messaging, revenue management, and payment method handling.</li>
-                    <li>Developed web owner portal modules including staff management, user management, and analytics &amp; reports.</li>
-                    <li>Performed UI improvements and bug fixing across both the mobile app and web portal to enhance user experience and visual consistency.</li>
-                    <li>Collaborated in an agile team environment through weekly standups, sprint planning, and code reviews throughout the 13-week development sprint.</li>
+                    <li>Staycation Haven is a property management platform designed for short-term rental and staycation property owners. It consists of a mobile application and a web owner portal that work together to help owners manage their properties remotely and efficiently.</li>
+                    <li>The web owner portal serves as the central admin dashboard where property owners can manage staff accounts, monitor user activity, and view analytics and reports on bookings and performance.</li>
+                    <li>The mobile app gives owners and staff on-the-go access to day-to-day operations — handling reservations, tracking bookings, blocking out unavailable dates, communicating with guests through in-app messaging and guest assistance tools, and managing revenue and payment methods, all from their phones.</li>
+                    <li>Together, the platform streamlines property management for owners who run multiple staycation listings, replacing scattered spreadsheets and manual coordination with one connected system.</li>
                   </ul>
                   <div class="tags"><span>React Native</span><span>TypeScript</span><span>Next.js</span><span>Neon</span></div>
                   <div class="flip-hint">Click for links &amp; screenshots <span class="arrow">→</span></div>

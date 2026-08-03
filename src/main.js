@@ -383,4 +383,33 @@ import './style.css';
   window.addEventListener('keydown', e=>{
     if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
   });
+
+  // ---- security popover on card back ----
+  document.querySelectorAll('.security-toggle').forEach(btn=>{
+    const popover = btn.nextElementSibling;
+    if (!popover || !popover.classList.contains('security-popover')) return;
+
+    function closePopover(){
+      popover.hidden = true;
+      btn.setAttribute('aria-expanded', 'false');
+    }
+    btn.addEventListener('click', e=>{
+      e.stopPropagation();
+      const open = popover.hidden;
+      popover.hidden = !open;
+      btn.setAttribute('aria-expanded', String(open));
+    });
+    popover.addEventListener('click', e=> e.stopPropagation());
+    document.addEventListener('click', e=>{
+      if (!popover.hidden && !popover.contains(e.target) && e.target !== btn) closePopover();
+    });
+    window.addEventListener('keydown', e=>{
+      if (e.key === 'Escape' && !popover.hidden) closePopover();
+    });
+    // close it if the card gets flipped back to front
+    const card = btn.closest('[data-flip-card]');
+    if (card){
+      card.addEventListener('click', ()=>{ if (!card.classList.contains('flipped')) closePopover(); });
+    }
+  });
 })();
